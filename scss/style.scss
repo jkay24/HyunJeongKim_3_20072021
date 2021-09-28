@@ -1,0 +1,160 @@
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+$color-bg: #f2f2f2;
+$layout-margin: 2rem;
+$box-shadow: 0 0 3px 3px #f5f5f5;
+$box-shadow-welcome: 0 3px 6px 2px darken(#f2f2f2, 20%);
+
+/* Typography */
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 2.5rem;
+}
+
+/* Layout */
+.how {
+  margin: $layout-margin;
+}
+
+/* Header */
+.header {
+  display: flex;
+  margin: $layout-margin / 2;
+  > button {
+    border: none;
+    background-color: white;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  > .logo {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    height: 35px;
+    object-fit: scale-down;
+  }
+  &__inv {
+    display: flex;
+    flex: 1;
+  }
+}
+
+/* Presentation - welcome page */
+.presentation {
+  text-align: center;
+  background-color: $color-bg;
+  border-top: 3px solid darken($color-bg, 60%);
+  &__city {
+    color: darken($color-bg, 60%);
+    background-color: darken($color-bg, 10%);
+    padding: 1rem;
+    box-shadow: $box-shadow;
+
+    > i {
+      margin-right: 1%;
+    }
+  }
+  &__container {
+    box-shadow: $box-shadow;
+    padding: 1.3rem;
+    line-height: 1.2;
+    padding: 3.3rem;
+    > * {
+      margin-block-end: 1rem;
+    }
+  }
+  &__click {
+    color: white;
+    font-weight: bolder;
+    background: linear-gradient($color-secondary, $color-primary);
+    border-radius: 35px;
+    padding: 1.3rem;
+    box-shadow: $box-shadow-welcome;
+  }
+}
+/* How to - welcome page */
+
+.how {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20rem;
+
+  &__lines {
+    padding: 1rem;
+    background-color: $color-bg;
+    box-shadow: $box-shadow-welcome;
+    border-radius: 20px;
+    font-weight: bolder;
+    & .fa-stack {
+      color: white;
+      right: 11%;
+    }
+    & .fa-stack-2x {
+      color: $color-primary;
+    }
+  }
+  &__icon {
+    position: relative;
+    right: 6%;
+    color: darken($color-bg, 60%);
+  }
+  &__txt {
+    margin-left: 1%;
+  }
+}
+
+/* Restaurants - welcome page */
+.restaurants {
+  background-color: $color-bg;
+  display: flex;
+  flex-direction: column;
+  & .resto {
+    margin: $layout-margin;
+    box-shadow: $box-shadow-welcome;
+    border-radius: 20px;
+    &__pic > img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: darken($color-bg, 70%);
+  > ul {
+    color: white;
+    > li {
+      list-style-type: none;
+      > a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+.logo--footer {
+  color: white;
+  height: 20px;
+  object-fit: scale-down;
+}

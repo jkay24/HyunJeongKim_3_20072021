@@ -1,0 +1,214 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Variables */
+/* Typography */
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 2.5rem;
+}
+
+/* Layout */
+.how {
+  margin: 2rem;
+}
+
+/* Header */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem;
+}
+
+.header > button {
+  border: none;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header > .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 35px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.header__inv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* Presentation - welcome page */
+.presentation {
+  text-align: center;
+  background-color: #f2f2f2;
+  border-top: 3px solid #595959;
+}
+
+.presentation__city {
+  color: #595959;
+  background-color: #d9d9d9;
+  padding: 1rem;
+  -webkit-box-shadow: 0 0 3px 3px #f5f5f5;
+          box-shadow: 0 0 3px 3px #f5f5f5;
+}
+
+.presentation__city > i {
+  margin-right: 1%;
+}
+
+.presentation__container {
+  -webkit-box-shadow: 0 0 3px 3px #f5f5f5;
+          box-shadow: 0 0 3px 3px #f5f5f5;
+  padding: 1.3rem;
+  line-height: 1.2;
+  padding: 3.3rem;
+}
+
+.presentation__container > * {
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem;
+}
+
+.presentation__click {
+  color: white;
+  font-weight: bolder;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
+  border-radius: 35px;
+  padding: 1.3rem;
+  -webkit-box-shadow: 0 3px 6px 2px #bfbfbf;
+          box-shadow: 0 3px 6px 2px #bfbfbf;
+}
+
+/* How to - welcome page */
+.how {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 20rem;
+}
+
+.how__lines {
+  padding: 1rem;
+  background-color: #f2f2f2;
+  -webkit-box-shadow: 0 3px 6px 2px #bfbfbf;
+          box-shadow: 0 3px 6px 2px #bfbfbf;
+  border-radius: 20px;
+  font-weight: bolder;
+}
+
+.how__lines .fa-stack {
+  color: white;
+  right: 11%;
+}
+
+.how__lines .fa-stack-2x {
+  color: #9356dc;
+}
+
+.how__icon {
+  position: relative;
+  right: 6%;
+  color: #595959;
+}
+
+.how__txt {
+  margin-left: 1%;
+}
+
+/* Restaurants - welcome page */
+.restaurants {
+  background-color: #f2f2f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.restaurants .resto {
+  margin: 2rem;
+  -webkit-box-shadow: 0 3px 6px 2px #bfbfbf;
+          box-shadow: 0 3px 6px 2px #bfbfbf;
+  border-radius: 20px;
+}
+
+.restaurants .resto__pic > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  background-color: #404040;
+}
+
+.footer > ul {
+  color: white;
+}
+
+.footer > ul > li {
+  list-style-type: none;
+}
+
+.footer > ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo--footer {
+  color: white;
+  height: 20px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+/*# sourceMappingURL=style.css.map */
