@@ -36,8 +36,10 @@
         src="Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
         alt="Le délice des sens"
       />
-      <h1 class="banner__name">Le délice des sens</h1>
-      <i class="far fa-heart"></i>
+      <span class="banner__title">
+        <h1 class="banner__name">Le délice des sens</h1>
+        <i class="far fa-heart fa-lg"></i>
+      </span>
     </section>
 
     <main class="menu">
@@ -46,17 +48,17 @@
         <section class="menu__section">
           <h3 class="menu__name">Tartare de thon</h3>
           <p class="menu__detail">Assaisonné au yuzu</p>
-          <h3 class="menu__price">25€</h3>
+          <strong class="menu__price">25€</strong>
         </section>
         <section class="menu__section">
           <h3 class="menu__name">Bouchée de homard croustillant</h3>
           <p class="menu__detail">Et sa farandole de petits légumes</p>
-          <h3 class="menu__price">35€</h3>
+          <strong class="menu__price">35€</strong>
         </section>
         <section class="menu__section">
           <h3 class="menu__name">Velouté de cèpes</h3>
           <p class="menu__detail">Aux truffes</p>
-          <h3 class="menu__price">20€</h3>
+          <strong class="menu__price">20€</strong>
           <span class="menu__icon"><i class="fas fa-check-circle"></i></span>
         </section>
       </article>
@@ -66,17 +68,17 @@
         <section class="menu__section">
           <h3 class="menu__name">Poulet rôti aux herbes de Provence</h3>
           <p class="menu__detail">Et sa crème de truffe</p>
-          <h3 class="menu__price">40€</h3>
+          <strong class="menu__price">40€</strong>
         </section>
         <section class="menu__section">
           <h3 class="menu__name">Langouste rôtie</h3>
           <p class="menu__detail">Et ses légumes de saison</p>
-          <h3 class="menu__price">35€</h3>
+          <strong class="menu__price">35€</strong>
         </section>
         <section class="menu__section">
           <h3 class="menu__name">Côte de boeuf Angus</h3>
           <p class="menu__detail">Et sa purée de panais</p>
-          <h3 class="menu__price">44€</h3>
+          <strong class="menu__price">44€</strong>
         </section>
       </article>
 
@@ -85,20 +87,22 @@
         <section class="menu__section">
           <h3 class="menu__name">Farandole de desserts</h3>
           <p class="menu__detail">Du chef</p>
-          <h3 class="menu__price">18€</h3>
+          <strong class="menu__price">18€</strong>
         </section>
         <section class="menu__section">
           <h3 class="menu__name">Crème brulée</h3>
           <p class="menu__detail">Revisitée</p>
-          <h3 class="menu__price">22€</h3>
+          <strong class="menu__price">22€</strong>
         </section>
         <section class="menu__section">
           <h3 class="menu__name">Tiramisu</h3>
           <p class="menu__detail">À la noisette</p>
-          <h3 class="menu__price">23€</h3>
+          <strong class="menu__price">23€</strong>
         </section>
       </article>
-      <p class="menu__click">Commander</p>
+      <div class="click">
+        <p class="menu__click">Commander</p>
+      </div>
     </main>
 
     <footer class="footer">
@@ -107,17 +111,18 @@
         src="Maquettes Ohmyfood/images/logo/ohmyfood.png"
         alt="ohmyfood footer logo"
       />
-      <ul>
+      <ul class="fa-ul">
         <li>
-          <span class="footer__icon"><i class="fas fa-utensils"></i></span
+          <span class="footer__icon"><i class="fa-li fas fa-utensils"></i></span
           ><a href="#/">Proposer un restaurant</a>
         </li>
         <li>
-          <span class="footer__icon"><i class="fas fa-hands-helping"></i></span
+          <span class="footer__icon"
+            ><i class="fa-li fas fa-hands-helping"></i></span
           ><a href="#/">Devenir partenaire</a>
         </li>
         <li><a href="#/">Mentions légales</a></li>
-        <li><a href="#/">Contact</a></li>
+        <li><a href="mailto: ohmyfood@example.com">Contact</a></li>
       </ul>
     </footer>
   </body>
