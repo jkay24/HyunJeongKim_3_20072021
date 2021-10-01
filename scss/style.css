@@ -134,11 +134,12 @@ h1 {
   cursor: pointer;
 }
 
-/* How to - welcome page */
-.how {
-  height: 22rem;
+.presentation__click:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
+/* How to - welcome page */
 .how .fa-ul {
   margin-left: unset;
 }
@@ -153,9 +154,16 @@ h1 {
   margin: 1.5rem 0 1.5rem 0;
 }
 
+.how__lines:hover {
+  background-color: #e4d5f6;
+}
+
+.how__lines:hover__icon {
+  color: #9356dc;
+}
+
 .how__lines .fa-stack {
   color: white;
-  right: 11%;
 }
 
 .how__lines .fa-stack-2x {
@@ -169,6 +177,7 @@ h1 {
 
 .how__txt {
   margin-left: 3%;
+  vertical-align: middle;
 }
 
 /* Restaurants - welcome page */
@@ -185,7 +194,6 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 3rem 1.5rem 3rem 1.5rem;
-  height: 175vh;
 }
 
 .restaurants .resto {
@@ -195,6 +203,8 @@ h1 {
   color: black;
   height: 17rem;
   position: relative;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .restaurants .resto__new {
@@ -260,28 +270,31 @@ h1 {
 .banner {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 14rem 6rem;
-      grid-template-rows: 14rem 6rem;
+  -ms-grid-rows: 14rem 7rem;
+      grid-template-rows: 14rem 7rem;
 }
 
 .banner__pic {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: 37vh;
+  height: 130%;
 }
 
 .banner__title {
   background-color: #f2f2f2;
-  border-radius: 50px 50px 0 0;
+  border-radius: 40px 40px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 /* Menu */
@@ -298,7 +311,6 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 1rem 3.5rem 1rem;
-  height: 175vh;
 }
 
 .menu > *:not(.click) {
@@ -313,9 +325,6 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: 2rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 31%;
-          flex: 0 0 31%;
 }
 
 .menu > article > p:after {
@@ -337,6 +346,8 @@ h1 {
   cursor: pointer;
   line-height: 1.4;
   padding: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 11fr 0fr;
@@ -378,6 +389,11 @@ h1 {
   display: inline-block;
   cursor: pointer;
   width: 65%;
+}
+
+.menu__click:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
 .menu__icon {
