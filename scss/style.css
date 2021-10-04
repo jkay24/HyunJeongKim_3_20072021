@@ -165,7 +165,7 @@ h1 {
   background-color: #e4d5f6;
 }
 
-.how__lines:hover__icon {
+.how__lines:hover + .how__icon {
   color: #9356dc;
 }
 
@@ -276,6 +276,10 @@ h1 {
   color: white;
 }
 
+.footer > ul li a:hover {
+  color: #ff79da;
+}
+
 .footer__icon {
   margin-left: -0.5rem;
 }
@@ -288,6 +292,18 @@ h1 {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   width: 7rem;
+}
+
+/* Spinning loader- welcome page */
+.loader {
+  display: none;
+}
+
+.loader > img {
+  height: 140px;
+  display: inline-block;
+  -webkit-mask: url("https://i.ibb.co/FhZb3Xs/CJcLK.png") center/contain;
+          mask: url("https://i.ibb.co/FhZb3Xs/CJcLK.png") center/contain;
 }
 
 /* Banner - menu pages */
@@ -393,6 +409,59 @@ h1 {
   -ms-grid-columns: 11fr 0fr;
       grid-template-columns: 11fr 0fr;
       grid-template-areas: "name name" "detail price";
+  opacity: 0;
+  -webkit-animation: menu-load 300ms ease-in-out both;
+          animation: menu-load 300ms ease-in-out both;
+}
+
+.menu__section:nth-child(1) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.menu__section:nth-child(2) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.menu__section:nth-child(3) {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+
+.menu__section:nth-child(4) {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+
+.menu__section:nth-child(5) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.menu__section:nth-child(6) {
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
+}
+
+.menu__section:nth-child(7) {
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+}
+
+.menu__section:nth-child(8) {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.menu__section:nth-child(9) {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+
+.menu__section:nth-child(10) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
 }
 
 .menu__name {
@@ -440,5 +509,29 @@ h1 {
 
 .menu__icon {
   display: none;
+}
+
+@-webkit-keyframes menu-load {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-load {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */
