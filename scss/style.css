@@ -31,8 +31,9 @@ h1 {
 }
 
 /* Layout */
-.how {
-  margin: 2rem;
+.how,
+.header {
+  margin: 1.5rem;
 }
 
 .footer {
@@ -44,7 +45,6 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 1rem;
 }
 
 .header > button {
@@ -147,12 +147,12 @@ h1 {
 }
 
 /* How to - welcome page */
-.how .fa-ul {
-  margin-left: unset;
-}
-
 .how__lines {
-  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10fr;
+      grid-template-columns: 1fr 10fr;
+  padding: 1.5rem 1rem 1.5rem 1rem;
   background-color: #f2f2f2;
   -webkit-box-shadow: 0 3px 6px 2px #bfbfbf;
           box-shadow: 0 3px 6px 2px #bfbfbf;
@@ -165,26 +165,38 @@ h1 {
   background-color: #e4d5f6;
 }
 
-.how__lines:hover + .how__icon {
+.how__lines:hover > .how__icon {
   color: #9356dc;
 }
 
-.how__lines .fa-stack {
+.how__number {
   color: white;
-}
-
-.how__lines .fa-stack-2x {
-  color: #9356dc;
+  background-color: #9356dc;
+  border-radius: 50%;
+  border: 1px solid #9356dc;
+  width: 30px;
+  line-height: 27px;
+  text-align: center;
+  position: absolute;
+  left: 10px;
 }
 
 .how__icon {
-  position: relative;
+  margin-left: 40%;
   color: #595959;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .how__txt {
-  margin-left: 3%;
-  vertical-align: middle;
+  margin-left: 10%;
 }
 
 /* Restaurants - welcome page */
