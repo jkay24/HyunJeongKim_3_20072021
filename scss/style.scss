@@ -189,6 +189,7 @@ h1 {
       position: absolute;
       right: 15px;
       top: 15px;
+      border-radius: 3px;
       padding: 0.4rem;
       color: darken($color-tertiary, 40%);
       background-color: $color-tertiary;
@@ -241,16 +242,6 @@ h1 {
 .logo--footer {
   filter: invert(100%);
   width: 7rem;
-}
-
-/* Spinning loader- welcome page */
-.loader {
-  display: none;
-  > img {
-    height: 140px;
-    display: inline-block;
-    mask: url("https://i.ibb.co/FhZb3Xs/CJcLK.png") center/contain;
-  }
 }
 
 /* Banner - menu pages */
@@ -319,6 +310,34 @@ h1 {
         animation-delay: #{$initial-delay + $i * $increase-delay};
       }
     }
+    position: relative;
+    transition: all 0.5s;
+    &::after {
+      content: "\f058";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 900;
+      font-size: 1.3em;
+      position: absolute;
+      right: 0px;
+      color: white;
+      border-radius: 0 20px 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3em;
+      height: 100%;
+      background-color: $color-tertiary;
+      opacity: 0;
+    }
+    &:hover {
+      transition: all 0.5s;
+      padding-right: 5.5rem;
+      &::after {
+        opacity: 1;
+        transition: all 0.5s;
+        transform: rotate(360deg);
+      }
+    }
   }
   &__name {
     grid-area: name;
@@ -337,7 +356,20 @@ h1 {
     width: 65%;
   }
   &__icon {
-    display: none;
+    transform-origin: right;
+    visibility: hidden;
+    font-size: 1.3em;
+    position: absolute;
+    right: 0px;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3.75em;
+    background-color: $color-tertiary;
+    opacity: 0;
   }
 }
 
@@ -353,5 +385,58 @@ h1 {
   }
 }
 
-.menu__section {
+/* Spinning loader- welcome page */
+.loaded {
+  animation: fadeIn 1s 2.5s both;
+  z-index: 1003;
+}
+
+.loader {
+  animation: fadeOut 2.5s both;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-bg;
+  &__spinner {
+    border-top: 20px solid $color-primary;
+    border-radius: 50%;
+    border-bottom: 20px solid $color-secondary;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 3px 3px $color-tertiary;
+    animation: spinner 2s linear infinite;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }

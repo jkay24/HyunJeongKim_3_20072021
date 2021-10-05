@@ -218,6 +218,7 @@ h1 {
   position: absolute;
   right: 15px;
   top: 15px;
+  border-radius: 3px;
   padding: 0.4rem;
   color: #278870;
   background-color: #99e2d0;
@@ -292,18 +293,6 @@ h1 {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   width: 7rem;
-}
-
-/* Spinning loader- welcome page */
-.loader {
-  display: none;
-}
-
-.loader > img {
-  height: 140px;
-  display: inline-block;
-  -webkit-mask: url("https://i.ibb.co/FhZb3Xs/CJcLK.png") center/contain;
-          mask: url("https://i.ibb.co/FhZb3Xs/CJcLK.png") center/contain;
 }
 
 /* Banner - menu pages */
@@ -412,6 +401,9 @@ h1 {
   opacity: 0;
   -webkit-animation: menu-load 300ms ease-in-out both;
           animation: menu-load 300ms ease-in-out both;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .menu__section:nth-child(1) {
@@ -464,6 +456,44 @@ h1 {
           animation-delay: 2.5s;
 }
 
+.menu__section::after {
+  content: "\f058";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  font-size: 1.3em;
+  position: absolute;
+  right: 0px;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3em;
+  height: 100%;
+  background-color: #99e2d0;
+  opacity: 0;
+}
+
+.menu__section:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  padding-right: 5.5rem;
+}
+
+.menu__section:hover::after {
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
 .menu__name {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -508,7 +538,27 @@ h1 {
 }
 
 .menu__icon {
-  display: none;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  visibility: hidden;
+  font-size: 1.3em;
+  position: absolute;
+  right: 0px;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3em;
+  height: 3.75em;
+  background-color: #99e2d0;
+  opacity: 0;
 }
 
 @-webkit-keyframes menu-load {
@@ -532,6 +582,104 @@ h1 {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Spinning loader- welcome page */
+.loaded {
+  -webkit-animation: fadeIn 1s 2.5s both;
+          animation: fadeIn 1s 2.5s both;
+  z-index: 1003;
+}
+
+.loader {
+  -webkit-animation: fadeOut 2.5s both;
+          animation: fadeOut 2.5s both;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f2f2f2;
+}
+
+.loader__spinner {
+  border-top: 20px solid #9356dc;
+  border-radius: 50%;
+  border-bottom: 20px solid #ff79da;
+  width: 200px;
+  height: 200px;
+  -webkit-box-shadow: 0 0 3px 3px #99e2d0;
+          box-shadow: 0 0 3px 3px #99e2d0;
+  -webkit-animation: spinner 2s linear infinite;
+          animation: spinner 2s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=style.css.map */
