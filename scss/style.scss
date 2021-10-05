@@ -17,8 +17,7 @@ $color-tertiary: #99e2d0;
 $color-bg: #f2f2f2;
 $layout-margin: 1.5rem;
 $layout-padding: 2rem;
-$box-shadow: 0 0 3px 3px #f5f5f5;
-$box-shadow-welcome: 0 3px 6px 2px darken(#f2f2f2, 20%);
+$box-shadow: 3px 3px 8px darken(#f2f2f2, 15%);
 $initial-delay: 0.5s;
 $increase-delay: 0.2s;
 $total-cards: 10;
@@ -30,7 +29,7 @@ $total-cards: 10;
   background: linear-gradient($color-secondary, $color-primary);
   border-radius: 35px;
   padding: 1.3rem 2rem 1.3rem 2rem;
-  box-shadow: $box-shadow-welcome;
+  box-shadow: $box-shadow;
   display: inline-block;
   cursor: pointer;
   &:hover {
@@ -127,7 +126,7 @@ h1 {
     }
   }
   &__container {
-    box-shadow: $box-shadow;
+    box-shadow: 0 0 3px 3px #f5f5f5;
     padding: 1.3rem;
     line-height: 1.2;
     padding: 3rem 3.3rem 3rem 3.3rem;
@@ -147,7 +146,7 @@ h1 {
     grid-template-columns: 1fr 10fr;
     padding: 1.5rem 1rem 1.5rem 1rem;
     background-color: $color-bg;
-    box-shadow: $box-shadow-welcome;
+    box-shadow: $box-shadow;
     border-radius: 20px;
     font-weight: bolder;
     margin: $layout-margin 0 $layout-margin 0;
@@ -187,13 +186,16 @@ h1 {
   @include flex-col;
   padding: 3rem 1.5rem 3rem 1.5rem;
   & .resto {
-    box-shadow: $box-shadow-welcome;
+    box-shadow: $box-shadow;
     border-radius: 20px;
     color: black;
     height: 17rem;
     position: relative;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+    &:hover {
+      transform: scale(1.03);
+    }
     &__new {
       position: absolute;
       right: 15px;
@@ -247,7 +249,6 @@ h1 {
     }
   }
 }
-
 .logo--footer {
   filter: invert(100%);
   width: 7rem;
@@ -285,6 +286,15 @@ h1 {
   > *:not(.click) {
     @include flex-col;
     padding-bottom: 2rem;
+    > * {
+      opacity: 0;
+      animation: menu-load 300ms ease-in-out both;
+      @for $i from 1 through $total-cards {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$initial-delay + $i * $increase-delay};
+        }
+      }
+    }
   }
   > article > p:after {
     content: "";
@@ -296,7 +306,7 @@ h1 {
     text-align: center;
   }
   &__section {
-    box-shadow: $box-shadow-welcome;
+    box-shadow: $box-shadow;
     border-radius: 20px;
     background-color: white;
     cursor: pointer;
@@ -309,28 +319,18 @@ h1 {
     grid-template-areas:
       "name name"
       "detail price";
-    opacity: 0;
-    animation: menu-load 300ms ease-in-out both;
-    @for $i from 1 through $total-cards {
-      &:nth-child(#{$i}) {
-        animation-delay: #{$initial-delay + $i * $increase-delay};
-      }
-    }
+
     position: relative;
     transition: all 0.5s;
     &::after {
-      content: "\f058";
-      font-family: "Font Awesome 5 Pro";
-      font-weight: 900;
-      font-size: 1.3em;
+      content: "";
       position: absolute;
       right: 0px;
-      color: white;
       border-radius: 0 20px 20px 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 3em;
+      width: 4em;
       height: 100%;
       background-color: $color-tertiary;
       opacity: 0;
@@ -339,10 +339,32 @@ h1 {
       transition: all 0.5s;
       padding-right: 5.5rem;
       &::after {
+        content: "";
         opacity: 1;
         transition: all 0.5s;
-        transform: rotate(360deg);
       }
+      &::before {
+        content: "\f058";
+        transform: rotate(-360deg);
+        opacity: 1;
+        transition: all 1s;
+        z-index: 1;
+      }
+    }
+    &::before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3em;
+      content: "\f058";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 1.3em;
+      color: white;
+      opacity: 0;
+      position: absolute;
+      right: 0px;
+      bottom: 25px;
     }
   }
   &__name {
@@ -360,22 +382,6 @@ h1 {
   &__click {
     @include button-click;
     width: 65%;
-  }
-  &__icon {
-    transform-origin: right;
-    visibility: hidden;
-    font-size: 1.3em;
-    position: absolute;
-    right: 0px;
-    color: white;
-    border-radius: 0 20px 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3em;
-    height: 3.75em;
-    background-color: $color-tertiary;
-    opacity: 0;
   }
 }
 
