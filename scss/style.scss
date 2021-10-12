@@ -43,15 +43,47 @@ $menu-load-anim: menu-load 1.5s ease-in-out both;
 }
 
 @mixin heart {
+  position: relative;
+  float: right;
   line-height: 1.7;
-  padding-right: 0.1em;
-  &:hover {
-    background-image: linear-gradient($color-primary, $color-secondary);
-    transition: all 1s ease-in-out;
+  padding: 0.3rem;
+  > i {
+    position: absolute;
+    line-height: 1.7;
+    padding-right: 0.1em;
+  }
+  & .fill {
+    opacity: 0;
+    transition-duration: 500ms;
+    font-weight: 900;
+  }
+  & .empty {
+    transition-duration: 500ms;
+  }
+  &:hover > .empty {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from($color-primary),
+      to($color-secondary)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 900;
-    background-size: contain;
+    transition-duration: 500ms;
+  }
+  &:hover > .fill {
+    opacity: 1;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from($color-primary),
+      to($color-secondary)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: 500ms;
   }
 }
 
@@ -272,13 +304,9 @@ h1 {
       line-height: 1.4;
     }
     &__icon {
-      position: absolute;
-      right: 30px;
-      bottom: 20px;
-      background-size: contain;
-      > i {
-        @include heart;
-      }
+      right: 50px;
+      bottom: 50px;
+      @include heart;
     }
   }
 }
@@ -325,9 +353,10 @@ h1 {
     align-items: center;
     padding-right: 2.5rem;
     padding-left: 1rem;
-    > i {
-      @include heart;
-    }
+  }
+  &__icon {
+    bottom: 20px;
+    @include heart;
   }
 }
 
