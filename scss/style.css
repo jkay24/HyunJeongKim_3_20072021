@@ -620,29 +620,36 @@ h1 {
   width: 4em;
   height: 100%;
   background-color: #99e2d0;
-  opacity: 0;
+  visibility: hidden;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .menu__section:hover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.6s ease-in-out both;
+  transition: all 0.6s ease-in-out both;
   padding-right: 5.5rem;
+  overflow: hidden;
 }
 
 .menu__section:hover::after {
   content: "";
-  opacity: 1;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  visibility: visible;
 }
 
 .menu__section:hover::before {
   content: "\f058";
-  -webkit-transform: rotate(-360deg);
-          transform: rotate(-360deg);
-  opacity: 1;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  visibility: visible;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   z-index: 1;
 }
 
@@ -662,7 +669,7 @@ h1 {
   font-weight: 900;
   font-size: 1.3em;
   color: white;
-  opacity: 0;
+  visibility: hidden;
   position: absolute;
   right: 0px;
   bottom: 25px;
@@ -673,6 +680,9 @@ h1 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: name;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu__detail {
